@@ -11,24 +11,28 @@ Un sistema web desarrollado con Next.js y TypeScript para la gestión de tutorí
 ## 🛠️ Instalación
 
 1. Clona el repositorio:
+
 ```bash
-git clone [URL_DEL_REPO]
+git clone https://github.com/OscarMeza24/SistemaDeTurorias.git
 cd SistemaTutoUleam
 ```
 
 2. Instala las dependencias:
+
 ```bash
 pnpm install
 ```
 
 3. Configura las variables de entorno:
-Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
+   Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
+
 ```
 NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_llave_anonima
 ```
 
 4. Inicia el servidor de desarrollo:
+
 ```bash
 pnpm dev
 ```
@@ -53,6 +57,7 @@ pnpm dev
 ## 🎨 Estilos y UI
 
 El proyecto utiliza:
+
 - Tailwind CSS para estilos
 - Radix UI para componentes accesibles
 - Lucide React para íconos
