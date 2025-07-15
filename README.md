@@ -1,71 +1,74 @@
-# Sistema de Tutorías Académicas - Universidad Nacional de Loja
+# SistemaTutoUleam
 
-<div align="center">
-  <img src="https://github.com/alex-xvv/sistema_de_tutorias_academicas/blob/perf-Cambios_al_Readme_y_gitignore/studentTutorials.jpeg" alt="Logo Universidad Nacional de Loja" width="300">
-</div>
+Un sistema web desarrollado con Next.js y TypeScript para la gestión de tutorías.
 
-Este proyecto es una implementación de Django para la carrera de Ingeniería en Computación de la Universidad Nacional de Loja. Fue desarrollado para proporcionar un sistema eficiente y fácil de usar para la gestión de tutorías académicas.
+## 🚀 Requisitos Previos
 
-## Comenzando 🚀
+- Node.js (versión 18 o superior)
+- pnpm (gestor de paquetes recomendado)
+- Supabase cuenta (para la base de datos y autenticación)
 
-Estas instrucciones le proporcionarán una copia del proyecto en funcionamiento en su máquina local para propósitos de desarrollo y pruebas.
+## 🛠️ Instalación
 
-### Pre-requisitos 📋
-
-Para ejecutar este proyecto en su sistema local, necesitará Python y Django. Se recomienda utilizar un entorno virtual para no afectar sus configuraciones globales de Python.
-
-### Instalación 🔧
-
-1. **Clonar el repositorio**
-
-   ```
-   git clone https://github.com/alex-xvv/sistema_de_tutorias_academicas.git
-   cd sistema_de_tutorias_academicas
-   ```
-
-2. **Crear y activar el entorno virtual**
-
-   En Windows:
-
-   ```
-   python -m venv env
-   env\Scripts\activate
-   ```
-
-   En Unix o MacOS:
-
-   ```
-   python3 -m venv env
-   source env/bin/activate
-   ```
-
-3. **Instalar las dependencias del proyecto**
-
-   ```
-   pip install -r requirements.txt
-   ```
-
-## Ejecutando el proyecto 🖥️
-
-Para ejecutar el proyecto en su máquina local, use el comando:
-
-```
-python manage.py runserver
+1. Clona el repositorio:
+```bash
+git clone [URL_DEL_REPO]
+cd SistemaTutoUleam
 ```
 
-Luego visite `http://localhost:8000/` en su navegador para ver la aplicación.
+2. Instala las dependencias:
+```bash
+pnpm install
+```
 
-## Acerca de Django ⌨️
+3. Configura las variables de entorno:
+Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
+```
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_llave_anonima
+```
 
-Django es un framework de desarrollo web de alto nivel en Python que fomenta el desarrollo rápido con un diseño limpio y pragmático. Django se basa en el principio de "No reinventar la rueda" y viene con muchas características que facilitan las tareas de desarrollo web, como la autenticación de usuarios, las plantillas de HTML y la gestión de bases de datos.
+4. Inicia el servidor de desarrollo:
+```bash
+pnpm dev
+```
 
-## Autores ✒️
+## 📦 Scripts Disponibles
 
-- **Mayuri Condoy**
-- **Alex Viñamagua**
-- **Cecilia Trueba**
-- **Gerardo Quizhpe**
+- `pnpm dev`: Inicia el servidor de desarrollo
+- `pnpm build`: Crea la build de producción
+- `pnpm start`: Inicia la aplicación en modo producción
+- `pnpm lint`: Ejecuta el linting del código
 
+## 📚 Tecnologías Utilizadas
 
+- Next.js 15.2.4
+- TypeScript
+- Supabase (Base de datos y autenticación)
+- Tailwind CSS
+- Radix UI (Componentes accesibles)
+- React Hook Form
+- Zod (Validación de formularios)
 
-**¡Muchas gracias por su interés en nuestro proyecto!**
+## 🎨 Estilos y UI
+
+El proyecto utiliza:
+- Tailwind CSS para estilos
+- Radix UI para componentes accesibles
+- Lucide React para íconos
+- Next Themes para soporte de tema oscuro/claro
+
+## 🚀 Despliegue
+
+El proyecto está configurado para ser desplegado en Vercel o cualquier otro proveedor de hosting que soporte Next.js.
+
+## 📝 Notas
+
+- Asegúrate de tener un proyecto de Supabase configurado antes de iniciar el proyecto
+- Los componentes están organizados en la carpeta `components`
+- Las rutas de la aplicación están en la carpeta `app`
+- Los hooks personalizados están en la carpeta `hooks`
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia MIT.
