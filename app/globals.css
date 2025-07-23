@@ -1,0 +1,226 @@
+@@ .. @@
+ /* Accessibility Enhancements */
+ .high-contrast {
+-  --background: 0 0% 0%;
+-  --foreground: 0 0% 100%;
+-  --card: 0 0% 10%;
+-  --card-foreground: 0 0% 100%;
+-  --border: 0 0% 50%;
++  --background: 0 0% 0% !important;
++  --foreground: 0 0% 100% !important;
++  --card: 0 0% 10% !important;
++  --card-foreground: 0 0% 100% !important;
++  --border: 0 0% 70% !important;
++  --input: 0 0% 20% !important;
++  --primary: 60 100% 50% !important;
++  --primary-foreground: 0 0% 0% !important;
++  --secondary: 0 0% 20% !important;
++  --secondary-foreground: 0 0% 100% !important;
++  --muted: 0 0% 15% !important;
++  --muted-foreground: 0 0% 85% !important;
++  --accent: 60 100% 50% !important;
++  --accent-foreground: 0 0% 0% !important;
++}
++
++.high-contrast * {
++  border-color: hsl(var(--border)) !important;
++}
++
++.high-contrast button,
++.high-contrast input,
++.high-contrast select,
++.high-contrast textarea {
++  border: 2px solid hsl(var(--border)) !important;
+ }
+ 
+ .large-text {
+-  font-size: 1.25rem !important;
++  font-size: 1.125rem !important;
+ }
+ 
+ .large-text h1 {
+-  font-size: 3rem !important;
++  font-size: 2.5rem !important;
+ }
+ 
+ .large-text h2 {
+-  font-size: 2.5rem !important;
++  font-size: 2rem !important;
+ }
+ 
+ .large-text h3 {
+-  font-size: 2rem !important;
++  font-size: 1.75rem !important;
++}
++
++.large-text h4 {
++  font-size: 1.5rem !important;
++}
++
++.large-text h5 {
++  font-size: 1.25rem !important;
++}
++
++.large-text h6 {
++  font-size: 1.125rem !important;
+ }
+ 
+ .large-text p,
+ .large-text span,
+-.large-text div {
++.large-text div,
++.large-text button,
++.large-text input,
++.large-text label {
+   font-size: 1.25rem !important;
++  line-height: 1.6 !important;
++}
++
++.large-text .text-sm {
++  font-size: 1rem !important;
++}
++
++.large-text .text-xs {
++  font-size: 0.875rem !important;
+ }
+ 
+ .reduced-motion * {
+   animation-duration: 0.01ms !important;
+   animation-iteration-count: 1 !important;
+   transition-duration: 0.01ms !important;
++  scroll-behavior: auto !important;
++}
++
++.reduced-motion *:before,
++.reduced-motion *:after {
++  animation-duration: 0.01ms !important;
++  animation-iteration-count: 1 !important;
++  transition-duration: 0.01ms !important;
+ }
+ 
+-/* Focus indicators for better accessibility */
+-.focus-visible:focus {
++/* Enhanced focus indicators */
++.enhanced-focus *:focus,
++.enhanced-focus *:focus-visible {
+   outline: 2px solid var(--ring);
+   outline-offset: 2px;
++  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
++}
++
++.enhanced-focus button:focus,
++.enhanced-focus input:focus,
++.enhanced-focus select:focus,
++.enhanced-focus textarea:focus,
++.enhanced-focus [role="button"]:focus {
++  outline: 3px solid #0066cc;
++  outline-offset: 2px;
++  box-shadow: 0 0 0 5px rgba(0, 102, 204, 0.3);
++}
++
++.enhanced-focus a:focus {
++  outline: 2px solid #0066cc;
++  outline-offset: 2px;
++  background-color: rgba(0, 102, 204, 0.1);
++  text-decoration: underline;
++}
++
++/* Skip to main content link */
++.skip-link {
++  position: absolute;
++  top: -40px;
++  left: 6px;
++  background: #000;
++  color: #fff;
++  padding: 8px;
++  text-decoration: none;
++  z-index: 1000;
++  border-radius: 4px;
++}
++
++.skip-link:focus {
++  top: 6px;
+ }
+ 
+ /* Screen reader only content */
+@@ .. @@
+   border: 0;
+ }
+ 
++/* Improved keyboard navigation */
++[tabindex="-1"]:focus {
++  outline: none;
++}
++
++/* Better contrast for links */
++a {
++  text-decoration-skip-ink: auto;
++}
++
++a:hover,
++a:focus {
++  text-decoration: underline;
++}
++
++/* Ensure interactive elements are large enough */
++button,
++input,
++select,
++textarea,
++[role="button"],
++[role="link"] {
++  min-height: 44px;
++  min-width: 44px;
++}
++
++/* High contrast mode improvements */
++@media (prefers-contrast: high) {
++  :root {
++    --background: 0 0% 0%;
++    --foreground: 0 0% 100%;
++    --border: 0 0% 70%;
++  }
++}
++
++/* Reduced motion preferences */
++@media (prefers-reduced-motion: reduce) {
++  *,
++  *::before,
++  *::after {
++    animation-duration: 0.01ms !important;
++    animation-iteration-count: 1 !important;
++    transition-duration: 0.01ms !important;
++    scroll-behavior: auto !important;
++  }
++}
++
++/* Dark mode accessibility improvements */
++.dark .high-contrast {
++  --background: 0 0% 0% !important;
++  --foreground: 0 0% 100% !important;
++  --card: 0 0% 5% !important;
++  --card-foreground: 0 0% 100% !important;
++  --border: 0 0% 80% !important;
++}
++
++/* Focus management for modals and dialogs */
++[role="dialog"],
++[role="alertdialog"] {
++  outline: none;
++}
++
++[role="dialog"]:focus,
++[role="alertdialog"]:focus {
++  outline: 2px solid var(--ring);
++}
++
++/* Ensure sufficient color contrast */
++.text-muted-foreground {
++  color: hsl(var(--muted-foreground));
++  opacity: 1;
++}
++
++.high-contrast .text-muted-foreground {
++  color: hsl(var(--foreground));
++  opacity: 0.8;
++}
